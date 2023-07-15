@@ -1,0 +1,13 @@
+<!-- weather_forecast/templates/forecast.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <h2>Weather Forecast</h2>
+    <h3>Location: Lat: {{ weather_forecast.lat }}, Lon: {{ weather_forecast.lon }}</h3>
+    <h3>Detailing Type: {{ weather_forecast.detailing_type }}</h3>
+    <p>Last Updated: {{ weather_forecast.last_updated }}</p>
+    <pre>{{ weather_forecast.forecast_data }}</pre>
+</section>
+{% endblock %}

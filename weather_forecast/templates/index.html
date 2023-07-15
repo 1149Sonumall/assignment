@@ -1,0 +1,26 @@
+<!-- weather_forecast/templates/index.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <h2>Enter Location Details</h2>
+    <form method="POST" action="{% url 'forecast' %}">
+        {% csrf_token %}
+        <label for="lat">Latitude:</label>
+        <input type="text" id="lat" name="lat" required>
+        <br>
+        <label for="lon">Longitude:</label>
+        <input type="text" id="lon" name="lon" required>
+        <br>
+        <label for="detailing_type">Detailing Type:</label>
+        <select id="detailing_type" name="detailing_type">
+            <option value="current">Current</option>
+            <option value="hourly">Hourly</option>
+            <option value="daily">Daily</option>
+        </select>
+        <br>
+        <button type="submit">Get Forecast</button>
+    </form>
+</section>
+{% endblock %}
